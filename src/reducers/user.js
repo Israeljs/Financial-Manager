@@ -14,10 +14,8 @@ const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case SAVE_LOGIN_INFO:
     return {
-      ...action.payLoad,
-      // ...state,
-      // email: action.payLoad.email,
-      // senha: action.payLoad.senha
+      ...state,
+      email: action.payLoad.email,
     };
   default:
     return state;

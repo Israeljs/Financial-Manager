@@ -3,7 +3,7 @@
 }
 
 input {
-  background-color: #e4dcdc;
+  background-color: white;
   background-image: none;
   border: none;
   box-shadow: none;
@@ -14,10 +14,11 @@ input {
 .Login {
   background-color: rgb(231, 233, 232);
   border-radius: 4px;
+  box-shadow: 0 10px 15px -3px rgb(46, 44, 44), 0 4px 6px -2px rgb(0 0 0 / 5%);
   height: 350px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 150px;
+  margin-top: 100px;
   padding: 20px;
   width: 300px;
 }
@@ -39,3 +40,38 @@ button {
   padding-right: 0;
   width: 280px;
 }
+
+button:hover {
+  background-color: rgb(102, 170, 153);
+}
+
+.Header {
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  height: 50px;
+  justify-content: end;
+  padding: 0 30px;
+}
+
+.Header-info {
+  display: flex;
+}
+
+.Total{
+  padding-left: 40px;
+}
+/* .Header a {
+  color: rgb(74, 85, 104);
+  font-size: 0.875rem;
+  padding: 0 10px;
+  text-decoration: none;
+} */
+/* .Header h4 {
+  margin-right: 30px;
+  padding-right: 40px;
+}
+.Header img {
+  margin-right: 30px;
+} */

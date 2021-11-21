@@ -37,7 +37,7 @@ class Login extends React.Component {
     isButtonAble = !(isValisEmail && isValidPassword);
     return (
       <div className="Login">
-        <h3 className="text-center">Login</h3>
+        <h1 className="text-center">Login</h1>
         <section className="login-inputs">
           <input
             type="email"
