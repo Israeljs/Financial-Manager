@@ -3,12 +3,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalExpense: '0',
+      currency: 'BRL',
+    };
+  }
+
   render() {
+    const { totalExpense, currency } = this.state;
     const { email } = this.props;
 
-    // const email = 'silvaij16@gmail.com';
-    const despesaTotal = '0';
-    const currency = 'BRL';
     return (
       <header className="Header">
         <section className="Header-info">
@@ -23,7 +29,7 @@ class Header extends React.Component {
             <span
               data-testid="total-field"
             >
-              {`Despesa Total: R$ ${despesaTotal},00`}
+              {`Despesa Total: R$ ${totalExpense},00`}
             </span>
             <span
               data-testid="header-currency-field"
@@ -42,7 +48,7 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  email: state.user.email,
+  email: state.userReducer.email,
 });
 
 export default connect(mapStateToProps, null)(Header);

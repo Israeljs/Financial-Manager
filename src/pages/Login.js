@@ -36,7 +36,7 @@ class Login extends React.Component {
     const isValisEmail = regex.test(email);
     isButtonAble = !(isValisEmail && isValidPassword);
     return (
-      <div className="Login">
+      <form className="Login">
         <h1 className="text-center">Login</h1>
         <section className="login-inputs">
           <input
@@ -64,7 +64,7 @@ class Login extends React.Component {
         >
           Entrar
         </button>
-      </div>
+      </form>
     );
   }
 }
