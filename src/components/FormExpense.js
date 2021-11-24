@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestApiCurrenciesThunk } from '../actions';
+import { requestApiCurrenciesThunk, addExpense } from '../actions';
 
 class FormExpense extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class FormExpense extends React.Component {
       tag: 'Alimentação',
     };
     this.handleChange = this.handleChange.bind(this);
-    this.valueExpense = this.valueExpense.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     // this.descriptionExpense = this.descriptionExpense.bind(this);
     // this.currencyExpense = this.currencyExpense.bind(this);
     // this.paymentExpense = this.paymentExpense.bind(this);
@@ -69,8 +69,8 @@ class FormExpense extends React.Component {
 
   currencyExpense() {
     const { currency } = this.state;
-    const { currencies } = this.props;
-    // console.log(currencies[1]);
+    const { currencyKeys } = this.props;
+    // console.log(currencyKeys[1]);
     return (
       <label htmlFor="currency">
         Moeda:
@@ -81,7 +81,7 @@ class FormExpense extends React.Component {
           onChange={ this.handleChange }
           data-testid="currency-input"
         >
-          {currencies.map((curr) => (
+          {currencyKeys.map((curr) => (
             <option
               key={ curr }
               data-testid={ curr }
@@ -134,13 +134,26 @@ class FormExpense extends React.Component {
       </label>);
   }
 
+  handleClick() {
+    const { requestKeyCurrencies, currencies, saveExepenses } = this.props;
+
+    requestKeyCurrencies();
+    saveExepenses({
+      ...this.state,
+      exchangeRates: currencies,
+    });
+    this.setState({
+      value: '',
+      description: '',
+    });
+  }
+
   buttonSubmit() {
     return (
       <button
         className="Button-wallet"
         type="button"
-        // onClick={ this.handleClick }
-        // disabled={ isButtonAble }
+        onClick={ this.handleClick }
       >
         Adicionar despesa
       </button>
@@ -162,22 +175,25 @@ class FormExpense extends React.Component {
 }
 
 FormExpense.propTypes = {
-  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  currencyKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
+  currencies: PropTypes.objectOf(PropTypes.object).isRequired,
   requestKeyCurrencies: PropTypes.func.isRequired,
+  saveExepenses: PropTypes.func.isRequired,
 };
 
 // FormExpense.defaultProps = {
-//   currencies: [],
+//   currencyKeys: [],
 // };
 
 const mapStateToProps = (state) => ({
+  currencyKeys: state.walletReducer.currencyKeys,
   currencies: state.walletReducer.currencies,
   // expenses: state.walletReducer.expenses,
 });
 
 const mapDispatchToProps = (dispatch) => ({ // recebe um objeto que recebe a dispatch que recebe uma action
-  // saveCurrencyInfo: (payLoad) => dispatch(currencyInfo(payLoad)),
   requestKeyCurrencies: () => dispatch(requestApiCurrenciesThunk()),
+  saveExepenses: (state) => dispatch(addExpense(state)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormExpense);
