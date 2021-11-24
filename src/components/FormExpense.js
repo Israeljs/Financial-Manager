@@ -1,4 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import { connect } from 'react-redux';
+import { requestApiCurrenciesThunk } from '../actions';
 
 class FormExpense extends React.Component {
   constructor(props) {
@@ -12,11 +15,17 @@ class FormExpense extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.valueExpense = this.valueExpense.bind(this);
-    this.descriptionExpense = this.descriptionExpense.bind(this);
-    this.currencyExpense = this.currencyExpense.bind(this);
-    this.paymentExpense = this.paymentExpense.bind(this);
-    this.tagExpense = this.tagExpense.bind(this);
-    this.buttonSubmit = this.buttonSubmit.bind(this);
+    // this.descriptionExpense = this.descriptionExpense.bind(this);
+    // this.currencyExpense = this.currencyExpense.bind(this);
+    // this.paymentExpense = this.paymentExpense.bind(this);
+    // this.tagExpense = this.tagExpense.bind(this);
+    // this.buttonSubmit = this.buttonSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const { requestKeyCurrencies } = this.props;
+
+    requestKeyCurrencies();
   }
 
   handleChange({ target }) {
@@ -60,19 +69,27 @@ class FormExpense extends React.Component {
 
   currencyExpense() {
     const { currency } = this.state;
+    const { currencies } = this.props;
+    // console.log(currencies[1]);
     return (
       <label htmlFor="currency">
         Moeda:
         <select
           id="currency"
-          description={ currency }
+          value={ currency }
           name="currency"
           onChange={ this.handleChange }
           data-testid="currency-input"
         >
-          <option description="EUR">EUR</option>
-          <option description="CAD">CAD</option>
-          <option value="USD">USD</option>
+          {currencies.map((curr) => (
+            <option
+              key={ curr }
+              data-testid={ curr }
+              value={ curr }
+            >
+              { curr }
+            </option>
+          ))}
         </select>
       </label>);
   }
@@ -84,13 +101,13 @@ class FormExpense extends React.Component {
         Método de Pagamento:
         <select
           id="method"
-          description={ method }
+          value={ method }
           name="method"
           onChange={ this.handleChange }
           data-testid="tag-input"
         >
-          <option description="Dinheiro">Dinheiro</option>
-          <option description="Cartão de crédito">Cartão de crédito</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão de crédito">Cartão de crédito</option>
           <option value="Cartão de débito">Cartão de débito</option>
         </select>
       </label>);
@@ -103,15 +120,15 @@ class FormExpense extends React.Component {
         Tag:
         <select
           id="tag"
-          description={ tag }
+          value={ tag }
           name="tag"
           onChange={ this.handleChange }
           data-testid="tag-input"
         >
-          <option description="Alimentação">Alimentação</option>
-          <option description="Lazer">Lazer</option>
-          <option description="Trabalho">Trabalho</option>
-          <option description="Transporte">Transporte</option>
+          <option value="Alimentação">Alimentação</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Transporte">Transporte</option>
           <option value="Saúde">Saúde</option>
         </select>
       </label>);
@@ -144,4 +161,23 @@ class FormExpense extends React.Component {
   }
 }
 
-export default FormExpense;
+FormExpense.propTypes = {
+  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  requestKeyCurrencies: PropTypes.func.isRequired,
+};
+
+// FormExpense.defaultProps = {
+//   currencies: [],
+// };
+
+const mapStateToProps = (state) => ({
+  currencies: state.walletReducer.currencies,
+  // expenses: state.walletReducer.expenses,
+});
+
+const mapDispatchToProps = (dispatch) => ({ // recebe um objeto que recebe a dispatch que recebe uma action
+  // saveCurrencyInfo: (payLoad) => dispatch(currencyInfo(payLoad)),
+  requestKeyCurrencies: () => dispatch(requestApiCurrenciesThunk()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormExpense);

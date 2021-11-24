@@ -12,8 +12,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case SAVE_LOGIN_INFO:
     return {
-      ...state,
-      email: action.payLoad.email,
+      email: action.payLoad,
     };
   default:
     return state;
