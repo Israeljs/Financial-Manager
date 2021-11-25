@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   // },
 };
 
-const userReducer = (state = INITIAL_STATE, action) => {
+const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case SAVE_LOGIN_INFO:
     return {
@@ -19,4 +19,4 @@ const userReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default userReducer;
+export default user;

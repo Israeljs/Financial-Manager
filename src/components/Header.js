@@ -13,27 +13,27 @@ class Header extends React.Component {
 
     return (
       <header className="Header">
-        <section className="Header-info">
-          <div>
-            <span
-              data-testid="email-field"
-            >
-              {`Email: ${email}`}
-            </span>
-          </div>
-          <div className="Total">
-            <span
-              data-testid="total-field"
-            >
-              {`Despesa Total: R$ ${totalExpenses},00`}
-            </span>
-            <span
-              data-testid="header-currency-field"
-            >
-              BRL
-            </span>
-          </div>
-        </section>
+        {/* <section className="Header-info"> */}
+        {/* <div> */}
+        <span
+          data-testid="email-field"
+        >
+          { email }
+        </span>
+        {/* </div> */}
+        {/* <div className="Total"> */}
+        <span
+          data-testid="total-field"
+        >
+          {totalExpenses}
+        </span>
+        <span
+          data-testid="header-currency-field"
+        >
+          BRL
+        </span>
+        {/* </div> */}
+        {/* </section> */}
       </header>
     );
   }
@@ -41,14 +41,12 @@ class Header extends React.Component {
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
-  expenses: PropTypes.shape({
-    reduce: PropTypes.func,
-  }).isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  email: state.userReducer.email,
-  expenses: state.walletReducer.expenses,
+  email: state.user.email,
+  expenses: state.wallet.expenses,
 });
 
 export default connect(mapStateToProps, null)(Header);

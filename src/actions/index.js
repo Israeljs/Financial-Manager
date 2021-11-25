@@ -2,7 +2,7 @@ import getCurrency from '../services/awesomeapi';
 
 export const SAVE_LOGIN_INFO = 'SAVE_LOGIN_INFO';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
-export const REQUEST_KEYS_CURRENCIES = 'REQUEST_KEYS_CURRENCIES';
+// export const REQUEST_KEYS_CURRENCIES = 'REQUEST_KEYS_CURRENCIES';
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
 
 export const saveLoginInfo = (payLoad) => ({
@@ -15,21 +15,20 @@ export const addExpense = (payLoad) => ({
   payLoad,
 });
 
-export const saveCurrencies = (payLoad) => ({
+export const saveCurrencies = (currencies, currencyKeys) => ({
   type: REQUEST_CURRENCIES,
-  payLoad,
+  currencies,
+  currencyKeys,
 });
 
-export const saveKeysCurrencies = (payLoad) => ({
-  type: REQUEST_KEYS_CURRENCIES,
-  payLoad,
-});
+// export const saveKeysCurrencies = (payLoad) => ({
+//   type: REQUEST_KEYS_CURRENCIES,
+//   payLoad,
+// });
 
-export function requestApiCurrenciesThunk() {
-  return async (dispatch) => {
-    const response = await getCurrency();
+export const requestApiCurrenciesThunk = () => async (dispatch) => {
+  const currencies = await getCurrency();
+  const currencyKeys = Object.keys(currencies);
 
-    dispatch(saveCurrencies(response));
-    dispatch(saveKeysCurrencies(Object.keys(response)));
-  };
-}
+  dispatch(saveCurrencies(currencies, currencyKeys));
+};

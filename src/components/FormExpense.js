@@ -70,7 +70,8 @@ class FormExpense extends React.Component {
   currencyExpense() {
     const { currency } = this.state;
     const { currencyKeys } = this.props;
-    // console.log(currencyKeys[1]);
+    // const test1 = Object.keys(test);
+    console.log(currencyKeys);
     return (
       <label htmlFor="currency">
         Moeda:
@@ -134,14 +135,15 @@ class FormExpense extends React.Component {
       </label>);
   }
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
     const { requestKeyCurrencies, currencies, saveExepenses } = this.props;
 
-    requestKeyCurrencies();
     saveExepenses({
       ...this.state,
       exchangeRates: currencies,
     });
+    requestKeyCurrencies();
     this.setState({
       value: '',
       description: '',
@@ -152,8 +154,7 @@ class FormExpense extends React.Component {
     return (
       <button
         className="Button-wallet"
-        type="button"
-        onClick={ this.handleClick }
+        type="submit"
       >
         Adicionar despesa
       </button>
@@ -162,7 +163,10 @@ class FormExpense extends React.Component {
 
   render() {
     return (
-      <form className="FormExpense">
+      <form
+        onSubmit={ this.handleClick }
+        className="FormExpense"
+      >
         { this.valueExpense() }
         { this.descriptionExpense() }
         { this.currencyExpense() }
@@ -186,9 +190,9 @@ FormExpense.propTypes = {
 // };
 
 const mapStateToProps = (state) => ({
-  currencyKeys: state.walletReducer.currencyKeys,
-  currencies: state.walletReducer.currencies,
-  // expenses: state.walletReducer.expenses,
+  currencyKeys: state.wallet.currencies,
+  currencies: state.wallet.currencyKeys,
+  // expenses: state.wallet.expenses,
 });
 
 const mapDispatchToProps = (dispatch) => ({ // recebe um objeto que recebe a dispatch que recebe uma action
