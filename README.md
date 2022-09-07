@@ -19,15 +19,15 @@ Essa aplicação o usuário deverá ser capaz de:
 Para clonar o projeto via linha de comando, abra o terminal no seu computador e execute os comandos:
 
 ```shell
-git clone git@github.com:Israeljs/project-blogs-back.git
-cd project-blogs-back
+git clone git@github.com:Israeljs/Trybe-Wallet.git
+cd Trybe-Wallet
 ```
 
-Execute os comandos abaixo na raiz do projeto para instalar essas dependências globalmente e em seguida as dependências do projeto.
+Execute os comandos abaixo na raiz do projeto para instalar as dependências do projeto e startá-lo.
 
 ```shell
-npm install -g sequelize-cli eslint
 npm install
+npm start
 ```
 
 
