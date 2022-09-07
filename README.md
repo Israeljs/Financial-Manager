@@ -32,13 +32,13 @@ npm install
 npm start
 ```
 
-### Requisitos
+## Requisitos
 
-## Página da Login
+### Página da Login
 <details>
   <summary><strong> Requisitos </strong></summary>
 
-### 1. Crie uma página inicial de login com os seguintes campos e características:
+#### 1. Crie uma página inicial de login com os seguintes campos e características:
 
   * A rota para esta página deve ser ‘/’.
 
