@@ -9,7 +9,7 @@ Essa aplicação o usuário deverá ser capaz de:
 #### Ferramentas
 
 - [React](https://pt-br.reactjs.org/)
-- [Redux](https://nodejs.org/en/](https://react-redux.js.org/)
+- [Redux](https://react-redux.js.org/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/pt-br/)
 - [ESLint](https://eslint.org/)
