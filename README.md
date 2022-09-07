@@ -16,6 +16,21 @@ Essa aplicação o usuário deverá ser capaz de:
 - [ESLint](https://eslint.org/)
 - [Git](https://git-scm.com/)
 
+Para clonar o projeto via linha de comando, abra o terminal no seu computador e execute os comandos:
+
+```shell
+git clone git@github.com:Israeljs/project-blogs-back.git
+cd project-blogs-back
+```
+
+Execute os comandos abaixo na raiz do projeto para instalar essas dependências globalmente e em seguida as dependências do projeto.
+
+```shell
+npm install -g sequelize-cli eslint
+npm install
+```
+
+
 
 #### 1. Crie uma página inicial de login com os seguintes campos e características:
 
