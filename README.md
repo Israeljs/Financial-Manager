@@ -6,7 +6,7 @@ Essa aplicação o usuário deverá ser capaz de:
   - Visualizar uma tabelas com seus gastos;
   - Visualizar o total de gastos convertidos para uma moeda de escolha;
 
-#### Ferramentas
+### Ferramentas
 
 - [React](https://pt-br.reactjs.org/)
 - [Redux](https://react-redux.js.org/)
@@ -30,7 +30,7 @@ npm install
 npm start
 ```
 
-
+### Funcionalidades
 
 #### 1. Crie uma página inicial de login com os seguintes campos e características:
 
