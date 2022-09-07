@@ -88,6 +88,8 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 </details>
 
 ### Header
+<details>
+  <summary><strong> Requisitos </strong></summary>
 
 #### 3. Crie um header para a página de carteira contendo as seguintes características:
 
@@ -114,9 +116,12 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   - Um elemento que exiba o email do usuário que fez login.
   - Crie um elemento com a despesa total gerada pela lista de gastos.
   - Crie um elemento que mostre que qual câmbio está sendo utilizado, que será neste caso "BRL"
+</details>
 
 ### Formulário de adição de Despesa
-
+<details>
+  <summary><strong> Requisitos </strong></summary>
+  
 #### 4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:
 
   * Um campo para adicionar valor da despesa.
@@ -281,8 +286,11 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   **O que será verificado:**
 
   * O campo para selecionar em qual moeda será registrada a despesa tem as opções corretas
+</details>
 
 ### Tabela de Gastos
+<details>
+  <summary><strong> Requisitos </strong></summary>
 
 #### 6. Desenvolva uma tabela com os gastos contendo as seguintes características:
 
@@ -321,4 +329,4 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 - O botão deve estar dentro do último item da linha da tabela e deve possuir `data-testid="delete-btn"`
 - Ao ser clicado, o botão deleta a linha da tabela, alterando o estado global
 - Ao clicar no botão para remover uma despesa, o valor correspondente deve ser subtraído e a despesa total deve ser atualizada no header
-
+</details>
