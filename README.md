@@ -1,4 +1,17 @@
+# Projeto Trybe-Wallet v1.0.0
 
+Esse projeto acadêmico é um sistema web de carteira de controle de gastos com conversor de moedas. Para isso consome a API pública [awesomeapi](https://economia.awesomeapi.com.br), uma api de cotação de moedas.
+Essa aplicação um usuário deverá ser capaz de:
+  - Adicionar, remover e editar um gasto;
+  - Visualizar uma tabelas com seus gastos;
+  - Visualizar o total de gastos convertidos para uma moeda de escolha;
+
+#### Ferramentas
+
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [ESLint](https://eslint.org/)
+- [Git](https://git-scm.com/)
 
 # Entregáveis
 
