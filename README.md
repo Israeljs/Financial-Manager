@@ -32,13 +32,13 @@ npm install
 npm start
 ```
 
-### Endpoints
+### Requisitos
 
-### Página da Login
+## Página da Login
 <details>
   <summary><strong> Requisitos </strong></summary>
 
-#### 1. Crie uma página inicial de login com os seguintes campos e características:
+### 1. Crie uma página inicial de login com os seguintes campos e características:
 
   * A rota para esta página deve ser ‘/’.
 
@@ -70,7 +70,7 @@ npm start
   - A rota deve ser mudada para "/carteira" após o clique no botão
 </details>
 
-### Página da Carteira
+## Página da Carteira
 <details>
   <summary><strong> Requisitos </strong></summary>
 
@@ -78,9 +78,9 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   ![image](carteira.gif)
 
-### Configurando sua página
+## Configurando sua página
 
-#### 2. Crie uma página para sua carteira com as seguintes características:
+### 2. Crie uma página para sua carteira com as seguintes características:
 
   * A rota para esta página deve ser `/carteira`
 
@@ -92,11 +92,11 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   - O componente deve se chamar Wallet e estar localizado na pasta "src/pages"
 </details>
 
-### Header
+## Header
 <details>
   <summary><strong> Requisitos </strong></summary>
 
-#### 3. Crie um header para a página de carteira contendo as seguintes características:
+### 3. Crie um header para a página de carteira contendo as seguintes características:
 
   * Um elemento que exiba o email da pessoa usuária que fez login.
 
@@ -123,11 +123,11 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   - Crie um elemento que mostre que qual câmbio está sendo utilizado, que será neste caso "BRL"
 </details>
 
-### Formulário de adição de Despesa
+## Formulário de adição de Despesa
 <details>
   <summary><strong> Requisitos </strong></summary>
   
-#### 4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:
+### 4. Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:
 
   * Um campo para adicionar valor da despesa.
 
@@ -276,7 +276,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   - Um campo para selecionar uma categoria (tag) para a despesa
   - Um botão com o texto "Adicionar despesa" que salva as informações da despesa no estado global e atualiza a soma de despesas no header
 
-#### 5. Implemente a lógica para preencher as opções do campo "Moedas" buscando as siglas da API
+### 5. Implemente a lógica para preencher as opções do campo "Moedas" buscando as siglas da API
 
   * A pessoa usuária deve poder escolher entre os campos: 'USD', 'CAD', 'EUR', 'GBP', 'ARS', 'BTC', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY', 'ILS', 'ETH' e 'XRP'.
 
@@ -293,11 +293,11 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
   * O campo para selecionar em qual moeda será registrada a despesa tem as opções corretas
 </details>
 
-### Tabela de Gastos
+## Tabela de Gastos
 <details>
   <summary><strong> Requisitos </strong></summary>
 
-#### 6. Desenvolva uma tabela com os gastos contendo as seguintes características:
+### 6. Desenvolva uma tabela com os gastos contendo as seguintes características:
 
   * A tabela deve possuir um cabeçalho **exatamente** com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão
     
@@ -305,7 +305,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
 - A tabela deve possuir um cabeçalho com os campos Descrição, Tag, Método de pagamento, Valor, Moeda, Câmbio utilizado, Valor convertido e Moeda de conversão.
 
-#### 7. Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação
+### 7. Implemente a lógica para que a tabela seja alimentada pelo estado da aplicação
 
 * A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave ***expenses*** que vem do reducer `wallet`.
 
@@ -321,7 +321,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   - A tabela deve ser alimentada pelo estado da aplicação, que estará disponível na chave expenses que vem do reducer wallet.
 
-#### 8. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:
+### 8. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:
 
     ![image](btnExcluir.gif)
 
