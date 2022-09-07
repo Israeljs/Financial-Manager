@@ -16,6 +16,8 @@ Essa aplicação o usuário deverá ser capaz de:
 - [ESLint](https://eslint.org/)
 - [Git](https://git-scm.com/)
 
+### Executando o projeto
+
 Para clonar o projeto via linha de comando, abra o terminal no seu computador e execute os comandos:
 
 ```shell
@@ -30,7 +32,7 @@ npm install
 npm start
 ```
 
-### Funcionalidades
+### Endpoints
 
 #### 1. Crie uma página inicial de login com os seguintes campos e características:
 
@@ -64,6 +66,8 @@ npm start
   - A rota deve ser mudada para "/carteira" após o clique no botão
 
 ### Página da Carteira
+<details>
+  <summary><strong> Requisitos </strong></summary>
 
 Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que traga a despesa total em real que é representado pelo código 'BRL'. Esta página deve ser renderizada por um componente chamado ***Wallet***.
 
@@ -81,6 +85,7 @@ Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que t
 
   - A rota para esta página deve ser "/carteira"
   - O componente deve se chamar Wallet e estar localizado na pasta "src/pages"
+</details>
 
 ### Header
 
