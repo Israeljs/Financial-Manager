@@ -23,7 +23,7 @@ git clone git@github.com:Israeljs/Trybe-Wallet.git
 cd Trybe-Wallet
 ```
 
-Execute os comandos abaixo na raiz do projeto para instalar as dependências do projeto e startá-lo.
+Execute os comandos abaixo na raiz do projeto para instalar as dependências do projeto e executá-lo.
 
 ```shell
 npm install
