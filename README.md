@@ -34,6 +34,10 @@ npm start
 
 ### Endpoints
 
+### Página da Login
+<details>
+  <summary><strong> Requisitos </strong></summary>
+
 #### 1. Crie uma página inicial de login com os seguintes campos e características:
 
   * A rota para esta página deve ser ‘/’.
@@ -64,6 +68,7 @@ npm start
   - Habilitar o botão ``Entrar`` caso e-mail e senha sejam válidos
   - Salve o email no estado da aplicação, com a chave email, assim que o usuário logar
   - A rota deve ser mudada para "/carteira" após o clique no botão
+</details>
 
 ### Página da Carteira
 <details>
