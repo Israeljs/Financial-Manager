@@ -11,24 +11,10 @@ Essa aplicação o usuário deverá ser capaz de:
 - [React](https://pt-br.reactjs.org/)
 - [Redux](https://react-redux.js.org/)
 - [Node.js](https://nodejs.org/en/)
-- [Express](https://expressjs.com/pt-br/)
+- [CSS](https://www.w3schools.com/css/)
+- [HTML](https://www.w3schools.com/html/)
 - [ESLint](https://eslint.org/)
 - [Git](https://git-scm.com/)
-
-# Entregáveis
-
-## O que deverá ser desenvolvido
-
-Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
-  - Adicionar, remover e editar um gasto;
-  - Visualizar uma tabelas com seus gastos;
-  - Visualizar o total de gastos convertidos para uma moeda de escolha;
-
-Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
-
-Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
-
-
 
 
 #### 1. Crie uma página inicial de login com os seguintes campos e características:
