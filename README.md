@@ -1,6 +1,6 @@
-# Projeto Trybe-Wallet v1.0.0
+# Projeto Financial-Manager v1.0.0
 
-Esse projeto acadêmico é um sistema web de carteira de controle de gastos com conversor de moedas. Para isso consome a API pública [awesomeapi](https://economia.awesomeapi.com.br), uma api de cotação de moedas.
+Esse projeto acadêmico é um sistema web de gerenciamento financeiro e controle de gastos com conversor de moedas. Para isso consome a API pública [awesomeapi](https://economia.awesomeapi.com.br), uma api de cotação de moedas.
 Essa aplicação o usuário deverá ser capaz de:
   - Adicionar, remover e editar um gasto;
   - Visualizar uma tabelas com seus gastos;
